@@ -1,7 +1,9 @@
+
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     font-family: Space Grotesk;
 }
 
@@ -13,30 +15,44 @@ html, body {
 section{
     height: 100%;
     width: 100%;
-    /* background-color: yellow; */
 }
 
 nav{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* background-color: red; */
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 15px 80px;
     font-size: 18px;
 }
 
 #p2{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     gap: 35px;
 }
 
 nav h1{
     font-size: 27px;
     font-weight: 1000;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     gap: 8px;
 }
 
@@ -62,12 +78,12 @@ nav button{
 .center{
     height: 80%;
     width: 100%;
-    /* background-color: yellow; */
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
 .cp1{
-    /* background-color: lightblue; */
     height: 100%;
     width: 50%;
     padding: 50px 80px;
@@ -121,8 +137,12 @@ nav button{
     /* background-color: red; */
     margin-top: 5%;
     margin-left: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 55px ;
 }
 
@@ -143,11 +163,19 @@ nav button{
     height: 85%;
     width: 100%;
     /* background-color: yellow; */
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-shrink: 0;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     
 }
 
@@ -157,18 +185,28 @@ nav button{
     width: 35%;
     border: 2px solid black;
     border-radius: 20px;
-    box-shadow: 0px 10px;
+    -webkit-box-shadow: 0px 10px;
+            box-shadow: 0px 10px;
     margin: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     padding: 30px;
 }
 
 #elem #p1{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     height: 100%;
     width: 50%;
-    justify-content: space-between;
-    flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 #elem #p2{
     height: 100%;
@@ -190,11 +228,18 @@ nav button{
 }
 
 #elem #p3{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     height: 100%;
     width: 50%;
-    justify-content: space-between;
-    flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 #elem #p4{
@@ -231,6 +276,8 @@ nav button{
     margin: 60px 60px 0;
     border: 1px solid black;
     border-radius: 20px; 
+    display: -webkit-box; 
+    display: -ms-flexbox; 
     display: flex;   
 }
 
@@ -247,6 +294,8 @@ nav button{
     margin-left: 60px;
     background-color: black;
     border-radius: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -254,9 +303,15 @@ nav button{
     height: 100%;
     width: 50%;
     padding: 35px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
 }
 
 #first p{
@@ -292,8 +347,12 @@ nav button{
     height: 50%;
     width: 100%;
     /* background-color: red; */
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 50px;
     gap: 20px;
 }
