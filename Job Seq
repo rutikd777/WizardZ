@@ -1,0 +1,116 @@
+
+# Class to represent a job
+class Job:
+    def __init__(self, job_id, deadline, profit):
+        self.job_id = job_id
+        self.deadline = deadline
+        self.profit = profit
+
+# Function to perform job sequencing
+def job_sequencing(jobs, max_deadline):
+    # Sort jobs by profit in descending order
+    jobs.sort(key=lambda x: x.profit, reverse=True)
+    
+    # Initialize the result sequence and the time slots
+    result = [-1] * max_deadline
+    total_profit = 0
+    
+    # Process each job in order of descending profit
+    for job in jobs:
+        # Check from the last possible slot down to 0
+        for slot in range(min(max_deadline, job.deadline) - 1, -1, -1):
+            if result[slot] == -1:  # If the slot is free
+                result[slot] = job.job_id
+                total_profit += job.profit
+                break
+
+    # Filter out unused slots and return the job sequence and total profit
+    job_sequence = [job_id for job_id in result if job_id != -1]
+    return job_sequence, total_profit
+
+# Sample job list (Job ID, Deadline, Profit)
+jobs = [Job('J1', 2, 100), Job('J2', 1, 19), Job('J3', 2, 27), Job('J4', 1, 25), Job('J5', 3, 15)]
+max_deadline = 3  # Maximum deadline of jobs
+
+# Running the job sequencing function
+job_sequence, total_profit = job_sequencing(jobs, max_deadline)
+
+# Output the result
+print("Optimal job sequence:", job_sequence)
+print("Total profit:", total_profit)
+
+----------------------------------------------------------------------------------------------------------------------------------------
+dynamic
+
+# Class to represent a job
+class Job:
+    def __init__(self, job_id, deadline, profit):
+        self.job_id = job_id
+        self.deadline = deadline
+        self.profit = profit
+
+# Function to perform job sequencing
+def job_sequencing(jobs, max_deadline):
+    # Sort jobs by profit in descending order
+    jobs.sort(key=lambda x: x.profit, reverse=True)
+    
+    # Initialize the result sequence and the time slots
+    result = [-1] * max_deadline
+    total_profit = 0
+    
+    # Process each job in order of descending profit
+    for job in jobs:
+        # Check from the last possible slot down to 0
+        for slot in range(min(max_deadline, job.deadline) - 1, -1, -1):
+            if result[slot] == -1:  # If the slot is free
+                result[slot] = job.job_id
+                total_profit += job.profit
+                break
+
+    # Filter out unused slots and return the job sequence and total profit
+    job_sequence = [job_id for job_id in result if job_id != -1]
+    return job_sequence, total_profit
+
+# Function to get user input for jobs
+def get_jobs_from_user():
+    jobs = []
+    num_jobs = int(input("Enter the number of jobs: "))
+    max_deadline = 0
+
+    for i in range(num_jobs):
+        job_id = input(f"Enter Job ID for Job {i+1}: ")
+        deadline = int(input(f"Enter deadline for Job {job_id}: "))
+        profit = int(input(f"Enter profit for Job {job_id}: "))
+        
+        jobs.append(Job(job_id, deadline, profit))
+        
+        # Update the maximum deadline to define the time slots
+        max_deadline = max(max_deadline, deadline)
+    
+    return jobs, max_deadline
+
+# Main function to run the job sequencing
+def main():
+    jobs, max_deadline = get_jobs_from_user()
+    job_sequence, total_profit = job_sequencing(jobs, max_deadline)
+
+    # Output the result
+    print("Optimal job sequence:", job_sequence)
+    print("Total profit:", total_profit)
+
+# Run the main function
+main()
+----------*-----------
+eg:
+Enter the number of jobs: 3
+Enter Job ID for Job 1: J1
+Enter deadline for Job J1: 2
+Enter profit for Job J1: 100
+Enter Job ID for Job 2: J2
+Enter deadline for Job J2: 1
+Enter profit for Job J2: 19
+Enter Job ID for Job 3: J3
+Enter deadline for Job J3: 2
+Enter profit for Job J3: 27
+Optimal job sequence: ['J1', 'J3']
+Total profit: 127
